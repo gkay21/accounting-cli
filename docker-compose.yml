@@ -1,0 +1,14 @@
+services:
+  immudb:
+    image: codenotary/immudb:latest
+    container_name: immudb
+    ports:
+      - "3322:3322"
+      - "9497:9497"
+    volumes:
+      - db-data:/data
+    environment:
+      - IMMUDB_ADMIN_PASSWORD=immudb
+
+volumes:
+  db-data:
